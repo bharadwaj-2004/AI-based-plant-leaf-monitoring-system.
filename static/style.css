@@ -1,0 +1,1011 @@
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    min-height: 100vh;
+
+    color: white;
+
+    overflow-x: hidden;
+
+}
+
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+.background-image {
+
+    position: fixed;
+
+    inset: 0;
+
+    background-image:
+        url("/static/leaf-bg.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    z-index: -3;
+
+}
+
+
+.background-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(3, 45, 28, 0.92),
+            rgba(6, 92, 55, 0.75),
+            rgba(0, 30, 18, 0.90)
+        );
+
+    z-index: -2;
+
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.app-container {
+
+    width: min(
+        1180px,
+        92%
+    );
+
+    margin: auto;
+
+    padding:
+        35px
+        0
+        25px;
+
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header {
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    align-items: center;
+
+    margin-bottom: 65px;
+
+}
+
+
+.logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+}
+
+
+.logo-icon {
+
+    width: 52px;
+
+    height: 52px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 28px;
+
+    border-radius: 15px;
+
+    background: white;
+
+}
+
+
+.logo h1 {
+
+    font-size: 24px;
+
+    letter-spacing: -0.5px;
+
+}
+
+
+.logo h1 span {
+
+    color: #8df0ae;
+
+}
+
+
+.logo p {
+
+    font-size: 12px;
+
+    opacity: 0.65;
+
+    margin-top: 3px;
+
+}
+
+
+.status {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding:
+        9px
+        15px;
+
+    border:
+
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.2
+        );
+
+    border-radius: 30px;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+}
+
+
+.status-dot {
+
+    width: 8px;
+
+    height: 8px;
+
+    background: #55e889;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 12px
+        #55e889;
+
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        480px;
+
+    gap: 70px;
+
+    align-items: center;
+
+}
+
+
+.hero-text {
+
+    max-width: 580px;
+
+}
+
+
+.tag {
+
+    display: inline-block;
+
+    padding:
+        7px
+        13px;
+
+    border-radius: 30px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.12
+        );
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.15
+        );
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 22px;
+
+}
+
+
+.hero h2 {
+
+    font-size:
+        clamp(
+            45px,
+            6vw,
+            75px
+        );
+
+    line-height: 0.98;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.hero h2 span {
+
+    color: #8df0ae;
+
+}
+
+
+.hero-text > p {
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.72
+        );
+
+    max-width: 500px;
+
+}
+
+
+/* =========================================================
+   SCANNER
+========================================================= */
+
+.scanner-card {
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.96
+        );
+
+    color: #123c28;
+
+    border-radius: 28px;
+
+    padding: 38px;
+
+    text-align: center;
+
+    box-shadow:
+        0 30px 80px
+        rgba(
+            0,
+            0,
+            0,
+            0.35
+        );
+
+    transition: 0.3s;
+
+}
+
+
+.scanner-card.dragging {
+
+    transform:
+        scale(1.02);
+
+    box-shadow:
+        0 0 0 4px
+        #62d98b,
+        0 30px 80px
+        rgba(
+            0,
+            0,
+            0,
+            0.4
+        );
+
+}
+
+
+.upload-icon {
+
+    width: 80px;
+
+    height: 80px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin:
+        0
+        auto
+        18px;
+
+    border-radius: 50%;
+
+    background:
+        #e5f8eb;
+
+    font-size: 38px;
+
+}
+
+
+.scanner-card h3 {
+
+    font-size: 23px;
+
+    margin-bottom: 8px;
+
+}
+
+
+.scanner-card > p {
+
+    color: #769083;
+
+    font-size: 14px;
+
+}
+
+
+.or {
+
+    margin:
+        12px
+        0;
+
+    font-size: 12px !important;
+
+}
+
+
+.upload-button {
+
+    display: inline-block;
+
+    cursor: pointer;
+
+    padding:
+        13px
+        25px;
+
+    border-radius: 12px;
+
+    background:
+        #126b3c;
+
+    color: white;
+
+    font-weight: 600;
+
+    transition: 0.2s;
+
+}
+
+
+.upload-button:hover {
+
+    background:
+        #0d542f;
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+.paste-text {
+
+    margin-top: 17px;
+
+    color: #92a69a;
+
+    font-size: 11px;
+
+}
+
+
+.paste-text b {
+
+    color: #126b3c;
+
+}
+
+
+/* =========================================================
+   PREVIEW
+========================================================= */
+
+.preview-container {
+
+    display: none;
+
+    margin-top: 22px;
+
+}
+
+
+.preview-container.show {
+
+    display: block;
+
+}
+
+
+.preview-container img {
+
+    width: 100%;
+
+    max-height: 250px;
+
+    object-fit: cover;
+
+    border-radius: 17px;
+
+}
+
+
+/* =========================================================
+   SCAN BUTTON
+========================================================= */
+
+.scan-button {
+
+    width: 100%;
+
+    margin-top: 18px;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 13px;
+
+    background:
+        #126b3c;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+}
+
+
+.scan-button:disabled {
+
+    opacity: 0.35;
+
+    cursor: not-allowed;
+
+}
+
+
+.scan-button:not(:disabled):hover {
+
+    background:
+        #0d542f;
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.loading {
+
+    display: none;
+
+    margin-top: 20px;
+
+}
+
+
+.loading.show {
+
+    display: block;
+
+}
+
+
+.spinner {
+
+    width: 28px;
+
+    height: 28px;
+
+    margin:
+        auto
+        auto
+        10px;
+
+    border:
+        3px solid
+        #dceee2;
+
+    border-top-color:
+        #126b3c;
+
+    border-radius: 50%;
+
+    animation:
+        spin 0.8s linear infinite;
+
+}
+
+
+@keyframes spin {
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* =========================================================
+   RESULT
+========================================================= */
+
+.result-card {
+
+    display: none;
+
+    margin-top: 45px;
+
+    padding: 35px;
+
+    border-radius: 25px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.97
+        );
+
+    color: #123c28;
+
+    box-shadow:
+        0 25px 70px
+        rgba(
+            0,
+            0,
+            0,
+            0.3
+        );
+
+}
+
+
+.result-card.show {
+
+    display: block;
+
+}
+
+
+.result-header {
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    align-items: center;
+
+}
+
+
+.result-label {
+
+    color: #78a088;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    font-weight: 700;
+
+    margin-bottom: 7px;
+
+}
+
+
+.result-header h2 {
+
+    font-size: 27px;
+
+}
+
+
+.confidence {
+
+    text-align: right;
+
+}
+
+
+.confidence span {
+
+    display: block;
+
+    font-size: 11px;
+
+    color: #81988a;
+
+}
+
+
+.confidence strong {
+
+    font-size: 28px;
+
+    color: #126b3c;
+
+}
+
+
+.confidence-bar {
+
+    width: 100%;
+
+    height: 10px;
+
+    margin:
+        22px
+        0
+        28px;
+
+    background:
+        #e6f1e9;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+}
+
+
+.confidence-fill {
+
+    height: 100%;
+
+    width: 0%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #41b96b,
+            #0d713b
+        );
+
+    border-radius: 20px;
+
+    transition:
+        width
+        1s
+        ease;
+
+}
+
+
+/* =========================================================
+   PREDICTIONS
+========================================================= */
+
+.prediction-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 13px;
+
+}
+
+
+.prediction-row {
+
+    display: grid;
+
+    grid-template-columns:
+        220px
+        1fr
+        65px;
+
+    align-items: center;
+
+    gap: 15px;
+
+    font-size: 13px;
+
+}
+
+
+.prediction-name {
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+}
+
+
+.prediction-track {
+
+    height: 8px;
+
+    background:
+        #e7f0e9;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+}
+
+
+.prediction-fill {
+
+    height: 100%;
+
+    background:
+        #62c982;
+
+    border-radius: 10px;
+
+}
+
+
+.prediction-value {
+
+    text-align: right;
+
+    font-weight: 700;
+
+    color: #126b3c;
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+.reset-button {
+
+    margin-top: 28px;
+
+    padding:
+        12px
+        20px;
+
+    border:
+        1px solid
+        #cce2d3;
+
+    border-radius: 10px;
+
+    background: white;
+
+    color: #126b3c;
+
+    cursor: pointer;
+
+    font-weight: 600;
+
+}
+
+
+.reset-button:hover {
+
+    background:
+        #eff9f2;
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    margin-top: 50px;
+
+    padding-top: 20px;
+
+    border-top:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.15
+        );
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.55
+        );
+
+    font-size: 11px;
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .hero {
+
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+
+    }
+
+    .hero-text {
+
+        text-align: center;
+
+        margin: auto;
+
+    }
+
+    .header {
+
+        margin-bottom: 40px;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .app-container {
+
+        padding-top: 20px;
+
+    }
+
+    .status {
+
+        display: none;
+
+    }
+
+    .hero h2 {
+
+        font-size: 50px;
+
+    }
+
+    .scanner-card {
+
+        padding: 25px;
+
+    }
+
+    .prediction-row {
+
+        grid-template-columns:
+            1fr
+            70px;
+
+    }
+
+    .prediction-track {
+
+        grid-column:
+            1 / -1;
+
+        grid-row: 2;
+
+    }
+
+    footer {
+
+        flex-direction: column;
+
+        gap: 8px;
+
+    }
+
+}

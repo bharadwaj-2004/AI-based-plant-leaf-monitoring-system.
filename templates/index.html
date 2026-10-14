@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Plant Health AI
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+    <!-- Background -->
+    <div class="background-image"></div>
+
+    <!-- Dark/green overlay -->
+    <div class="background-overlay"></div>
+
+
+    <!-- Main application -->
+
+    <main class="app-container">
+
+
+        <!-- Header -->
+
+        <header class="header">
+
+            <div class="logo">
+
+                <div class="logo-icon">
+                    🌿
+                </div>
+
+                <div>
+
+                    <h1>
+                        PlantHealth<span>AI</span>
+                    </h1>
+
+                    <p>
+                        Intelligent tomato leaf analysis
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="status">
+
+                <span class="status-dot"></span>
+
+                AI MODEL ONLINE
+
+            </div>
+
+        </header>
+
+
+
+        <!-- Hero -->
+
+        <section class="hero">
+
+            <div class="hero-text">
+
+                <div class="tag">
+                    AI POWERED PLANT DIAGNOSIS
+                </div>
+
+                <h2>
+                    Keep your plants
+                    <span>healthy.</span>
+                </h2>
+
+                <p>
+                    Upload or paste a tomato leaf image
+                    and let our machine learning model
+                    identify possible diseases.
+                </p>
+
+            </div>
+
+
+            <!-- Scanner Card -->
+
+            <div
+                class="scanner-card"
+                id="dropZone"
+            >
+
+                <div
+                    class="upload-icon"
+                    id="uploadIcon"
+                >
+                    🌱
+                </div>
+
+
+                <h3>
+                    Scan a tomato leaf
+                </h3>
+
+
+                <p>
+                    Drag & drop an image here
+                </p>
+
+                <p class="or">
+                    or
+                </p>
+
+
+                <label
+                    for="fileInput"
+                    class="upload-button"
+                >
+                    Choose Image
+                </label>
+
+
+                <input
+                    type="file"
+                    id="fileInput"
+                    accept="image/*"
+                    hidden
+                >
+
+
+                <div class="paste-text">
+                    You can also press
+                    <b>Ctrl + V</b>
+                    to paste an image
+                </div>
+
+
+                <!-- Preview -->
+
+                <div
+                    class="preview-container"
+                    id="previewContainer"
+                >
+
+                    <img
+                        id="previewImage"
+                        alt="Leaf preview"
+                    >
+
+                </div>
+
+
+                <!-- Scan button -->
+
+                <button
+                    id="scanButton"
+                    class="scan-button"
+                    disabled
+                >
+
+                    <span>
+                        🔍
+                    </span>
+
+                    Scan Leaf
+
+                </button>
+
+
+                <!-- Loading -->
+
+                <div
+                    class="loading"
+                    id="loading"
+                >
+
+                    <div class="spinner"></div>
+
+                    <p>
+                        Analyzing leaf...
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- Result -->
+
+        <section
+            class="result-card"
+            id="resultCard"
+        >
+
+            <div class="result-header">
+
+                <div>
+
+                    <p class="result-label">
+                        ANALYSIS RESULT
+                    </p>
+
+                    <h2 id="prediction">
+                        —
+                    </h2>
+
+                </div>
+
+
+                <div class="confidence">
+
+                    <span>
+                        Confidence
+                    </span>
+
+                    <strong
+                        id="confidence"
+                    >
+                        0%
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="confidence-bar">
+
+                <div
+                    id="confidenceFill"
+                    class="confidence-fill"
+                ></div>
+
+            </div>
+
+
+            <div
+                class="prediction-list"
+                id="predictionList"
+            >
+
+            </div>
+
+
+            <button
+                class="reset-button"
+                id="resetButton"
+            >
+
+                Scan Another Leaf
+
+            </button>
+
+        </section>
+
+
+        <!-- Footer -->
+
+        <footer>
+
+            <span>
+                🌿 PlantHealthAI
+            </span>
+
+            <span>
+                MobileNetV2 • TensorFlow
+            </span>
+
+        </footer>
+
+    </main>
+
+
+    <script
+        src="{{ url_for('static', filename='script.js') }}"
+    ></script>
+
+</body>
+
+</html>
