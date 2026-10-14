@@ -1,0 +1,9 @@
+
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+plantvillage/
+plantvillage.zip
+clean_dataset/
+.env
